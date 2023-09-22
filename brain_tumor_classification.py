@@ -99,7 +99,7 @@ def augment_image(image):
     return augmented_image
 
 # Display a sample of augmented images
-IMAGE_SIZE = 128
+IMAGE_SIZE = 256
 
 def open_and_augment_images(paths):
     images = []
@@ -176,9 +176,9 @@ model.compile(optimizer=Adam(learning_rate=0.0001),
 
 #Train Model
 
-batch_size = 20
+batch_size = 32
 steps = int(len(train_paths)/batch_size)
-epochs = 10
+epochs = 100
 history = model.fit(datagen(train_paths, train_labels, batch_size=batch_size, epochs=epochs),
                     epochs=epochs, steps_per_epoch=steps)
 
